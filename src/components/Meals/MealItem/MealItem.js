@@ -3,6 +3,7 @@ import MealItemForm from './MealItemForm';
 
 const MealItem = props => {
   const price = `$${props.price.toFixed(2)}`;
+  const item = { id: props.id, name: props.name, amount: props.price, description: props.description };
   return (
     <li className={classes.meal}>
       <div>
@@ -11,7 +12,7 @@ const MealItem = props => {
         <div className={classes.price}>{price}</div>
       </div>
       <div>
-        <MealItemForm id={props.id} />
+        <MealItemForm id={props.id} item={item} />
       </div>
     </li>
   );
